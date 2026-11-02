@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smile Inc, consultorio dental en Atlixco, Puebla. Conoce nuestras especialidades y solicita tu cita.">
+  <title>Smile Inc | Tu sonrisa, nuestra prioridad</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  
+<header class="header" id="siteHeader">
+  <a href="#inicio" class="logo">
+    <span class="logo-icon">S</span>
+    <span>Smile <strong>Inc.</strong></span>
+  </a>
+
+  <!-- Botón hamburguesa: visible en celulares -->
+  <button
+    class="mobile-menu-toggle"
+    id="mobileMenuToggle"
+    type="button"
+    aria-label="Abrir menú de navegación"
+    aria-expanded="false"
+    aria-controls="mainNav"
+  >
+    <span class="hamburger-icon" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <!-- Navegación principal -->
+  <nav class="nav" id="mainNav" aria-label="Navegación principal">
+    <a href="#inicio">Inicio</a>
+
+    <details class="dropdown">
+      <summary>Servicios <span>⌄</span></summary>
+      <div class="dropdown-menu">
+        <a href="#servicios">Todas las especialidades</a>
+        <a href="#ortodoncia">Ortodoncia y endodoncia</a>
+        <a href="#cirugia">Cirugía e implantología</a>
+        <a href="#ortopedia">Ortopedia maxilofacial</a>
+        <a href="#periodoncia">Periodoncia</a>
+        <a href="#pediatria">Odontopediatría</a>
+      </div>
+    </details>
+
+    <a href="#nosotros">Nosotros</a>
+    <a href="#resenas">Reseñas</a>
+    <a href="#contacto">Contacto</a>
+
+    <!-- Botón de modo claro/oscuro que ya programamos -->
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Activar modo oscuro"
+      aria-pressed="false"
+    >
+      <span id="themeIcon" aria-hidden="true">☾</span>
+      <span id="themeText">Modo oscuro</span>
+    </button>
+
+    <a href="#citas" class="nav-button">Agendar cita</a>
+  </nav>
+</header>
+
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">TU SALUD BUCAL NOS IMPORTA</span>
+
+        <h1>Una sonrisa sana<br>cambia <span>todo.</span></h1>
+
+        <p>
+          En Smile Inc cuidamos tu salud bucal con atención profesional
+          para niños, jóvenes y adultos.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#citas" class="button button-primary">
+            Agendar una cita ↗
+          </a>
+          <a href="#servicios" class="button button-secondary">
+            Conocer servicios
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span class="status-dot"></span>
+          Atención dental en Atlixco, Puebla
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-circle"></div>
+        <div class="tooth-art" aria-hidden="true">✦</div>
+        <div class="floating-card">
+          <span class="floating-icon">✚</span>
+          <div>
+            <strong>Sonrisas saludables</strong>
+            <small>Cuidamos de ti y tu familia</small>
+          </div>
+        </div>
+        <span class="hero-decoration">SMILE WITH CONFIDENCE</span>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>7</strong><span>especialidades</span></div>
+      <div><strong>Para todos</strong><span>niños y adultos</span></div>
+      <div><strong>Atlixco</strong><span>Puebla, México</span></div>
+    </section>
+
+    <section class="section about" id="nosotros">
+      <div class="section-heading">
+        <span class="eyebrow">CONÓCENOS</span>
+        <h2>Tu salud bucal,<br>en buenas manos.</h2>
+      </div>
+
+      <div class="about-content">
+        <p>
+          Somos un consultorio dental en Atlixco, conformado por
+          profesionales en el área de la salud bucal. Nuestros
+          especialistas están capacitados para afrontar de manera
+          rápida y eficiente las necesidades bucodentales de
+          pequeños, jóvenes y adultos mayores.
+        </p>
+        <a href="#citas" class="text-link">Queremos atenderte →</a>
+      </div>
+    </section>
+
+    <section class="section services" id="servicios">
+      <div class="section-heading centered">
+        <span class="eyebrow">NUESTRAS ESPECIALIDADES</span>
+        <h2>Todo para cuidar tu sonrisa.</h2>
+        <p>Conoce nuestros servicios y para qué sirve cada uno.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card" id="ortodoncia">
+          <span class="service-icon">01</span>
+          <h3>Ortodoncia y endodoncia</h3>
+          <p>
+            <strong>Ortodoncia:</strong> corrige la posición de los
+            dientes y la mordida mediante tratamientos como los brackets.
+          </p>
+          <p>
+            <strong>Endodoncia:</strong> trata el interior del diente,
+            incluida la pulpa dental, cuando está inflamada o infectada.
+          </p>
+          <a href="#citas">Consultar servicio →</a>
+        </article>
+
+        <article class="service-card" id="cirugia">
+          <span class="service-icon">02</span>
+          <h3>Cirugía bucal e implantología</h3>
+          <p>
+            <strong>Cirugía bucal:</strong> incluye procedimientos como
+            extracciones y otras intervenciones en la boca.
+          </p>
+          <p>
+            <strong>Implantología:</strong> se ocupa de colocar implantes
+            dentales que pueden servir de soporte para dientes artificiales.
+          </p>
+          <a href="#citas">Consultar servicio →</a>
+        </article>
+
+        <article class="service-card" id="ortopedia">
+          <span class="service-icon">03</span>
+          <h3>Ortopedia maxilofacial</h3>
+          <p>
+            Ayuda a orientar el crecimiento y desarrollo de los huesos
+            de la cara y los maxilares, especialmente durante la infancia
+            y adolescencia, según cada caso.
+          </p>
+          <a href="#citas">Consultar servicio →</a>
+        </article>
+
+        <article class="service-card" id="periodoncia">
+          <span class="service-icon">04</span>
+          <h3>Periodoncia</h3>
+          <p>
+            Previene y trata enfermedades de las encías y los tejidos
+            que sostienen los dientes, como la gingivitis y la periodontitis.
+          </p>
+          <a href="#citas">Consultar servicio →</a>
+        </article>
+
+        <article class="service-card" id="pediatria">
+          <span class="service-icon">05</span>
+          <h3>Odontopediatría</h3>
+          <p>
+            Se enfoca en la salud bucal de bebés, niñas y niños,
+            desde la prevención y la revisión hasta el tratamiento
+            de problemas dentales infantiles.
+          </p>
+          <a href="#citas">Consultar servicio →</a>
+        </article>
+
+        <article class="service-card service-highlight">
+          <span class="service-icon">06</span>
+          <h3>Atención personalizada</h3>
+          <p>
+            Cada sonrisa es diferente. Una valoración dental permite
+            identificar las necesidades de cada paciente y orientar
+            el tratamiento adecuado.
+          </p>
+          <a href="#citas">Solicitar valoración →</a>
+        </article>
+      </div>
+
+      <p class="disclaimer">
+        La indicación y disponibilidad de cada tratamiento dependen
+        de una valoración profesional.
+      </p>
+    </section>
+
+    <section class="appointment" id="citas">
+      <div class="appointment-info">
+        <span class="eyebrow">ESTAMOS PARA AYUDARTE</span>
+        <h2>Tu próxima sonrisa comienza aquí.</h2>
+        <p>
+          Completa el formulario y prepara tu solicitud de cita
+          para enviarla por WhatsApp al consultorio.
+        </p>
+
+        <div class="appointment-detail">
+          <span>☎</span>
+          <div>
+            <small>Llámanos</small>
+            <a href="tel:+522441480428">+52 244 148 0428</a>
+          </div>
+        </div>
+
+        <div class="appointment-detail">
+          <span>◷</span>
+          <div>
+            <small>Lunes a sábado</small>
+            <p>9:00 a. m. – 7:00 p. m.</p>
+            <small>Domingo</small>
+            <p>9:00 a. m. – 3:00 p. m.</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="appointment-form" id="appointmentForm">
+        <h3>Solicitar una cita</h3>
+        <p class="form-description">
+          Los campos marcados con * son obligatorios.
+        </p>
+
+        <label for="patientName">Nombre completo *</label>
+        <input id="patientName" name="patientName"
+          type="text" autocomplete="name" required maxlength="100"
+          placeholder="Tu nombre">
+
+        <label for="patientPhone">Teléfono de contacto *</label>
+        <input id="patientPhone" name="patientPhone"
+          type="tel" autocomplete="tel" required maxlength="20"
+          placeholder="Tu número de teléfono">
+
+        <label for="service">Servicio de interés *</label>
+        <select id="service" name="service" required>
+          <option value="">Selecciona un servicio</option>
+          <option>Ortodoncia</option>
+          <option>Endodoncia</option>
+          <option>Cirugía bucal</option>
+          <option>Implantología</option>
+          <option>Ortopedia maxilofacial</option>
+          <option>Periodoncia</option>
+          <option>Odontopediatría</option>
+          <option>Valoración general</option>
+          <option>Otro servicio</option>
+        </select>
+
+        <div class="form-row">
+          <div>
+            <label for="appointmentDate">Fecha *</label>
+            <input id="appointmentDate" name="appointmentDate"
+              type="date" required>
+          </div>
+          <div>
+            <label for="appointmentTime">Horario *</label>
+            <select id="appointmentTime" name="appointmentTime" required>
+              <option value="">Primero elige fecha</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="notes">Comentario (opcional)</label>
+        <textarea id="notes" name="notes" rows="3" maxlength="500"
+          placeholder="¿Hay algo que debamos saber?"></textarea>
+
+        <button class="button button-primary submit-button" type="submit">
+          Continuar por WhatsApp ↗
+        </button>
+
+        <p class="form-note">
+          Tu solicitud no confirma la cita. El consultorio deberá
+          verificar la disponibilidad y confirmar el horario.
+        </p>
+        <p id="formMessage" class="form-message" role="status"
+          aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="section reviews" id="resenas">
+      <div class="section-heading centered">
+        <span class="eyebrow">OPINIONES DE PACIENTES</span>
+        <h2>Tu experiencia importa.</h2>
+        <p>
+          Consulta las opiniones publicadas en Google sobre el consultorio.
+        </p>
+      </div>
+
+      <div class="reviews-panel">
+        <div class="google-mark" aria-label="Google">Google</div>
+        <p>
+          Descubre las experiencias y valoraciones que los pacientes
+          han compartido sobre Smile Inc.
+        </p>
+        <a class="button button-secondary"
+          href="https://www.google.com/maps/search/?api=1&query=Smile+Inc+1o+de+Mayo+1501+Atlixco+Puebla"
+          target="_blank" rel="noopener noreferrer">
+          Ver en Google Maps ↗
+        </a>
+      </div>
+
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div class="section-heading">
+        <span class="eyebrow">VISÍTANOS</span>
+        <h2>Estamos cerca de ti.</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Dirección</h3>
+          <p>
+            1o. de Mayo 1501, Hogar del Obrero,<br>
+            74260 Atlixco, Puebla, México.
+          </p>
+          <a class="text-link"
+            href="https://www.google.com/maps/search/?api=1&query=1o+de+Mayo+1501+Hogar+del+Obrero+74260+Atlixco+Puebla+Mexico"
+            target="_blank" rel="noopener noreferrer">
+            Cómo llegar →
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>Horario</h3>
+          <p>Lunes a sábado: 9:00 a. m. – 7:00 p. m.</p>
+          <p>Domingo: 9:00 a. m. – 3:00 p. m.</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Síguenos</h3>
+          <p>Facebook: Smile.inc</p>
+          <p>Instagram: @smile.inc2</p>
+          <a class="text-link"
+            href="https://www.facebook.com/Smile.inc"
+            target="_blank" rel="noopener noreferrer">
+            Visitar Facebook →
+          </a>
+          <a class="text-link"
+            href="https://www.instagram.com/smile.inc2/"
+            target="_blank" rel="noopener noreferrer">
+            Visitar Instagram →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#inicio" class="logo">
+      <span class="logo-icon">S</span>
+      <span>Smile <strong>Inc.</strong></span>
+    </a>
+    <p>Tu salud bucal merece atención.</p>
+    <p class="footer-legal">
+      © <span id="currentYear"></span> Smile Inc. Todos los derechos reservados.
+    </p>
+    <!-- Aquí agregaremos el aviso de privacidad cuando esté listo. -->
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,1160 @@
+
+/* =================================
+   1. CONFIGURACIÓN GENERAL
+================================= */
+
+:root {
+  --primary: #087e8b;
+  --primary-dark: #075c66;
+  --mint: #dff5f1;
+  --background: #f7fbfa;
+  --white: #ffffff;
+  --text: #183438;
+  --muted: #657b7d;
+  --border: #dce9e7;
+  --radius: 18px;
+  --shadow: 0 12px 35px rgba(24, 52, 56, 0.07);
+}
+
+
+/* =================================
+   MODO OSCURO
+================================= */
+
+body.dark-mode {
+  --primary: #55cbd0;
+  --primary-dark: #35aeb5;
+  --mint: #203d40;
+  --background: #111b20;
+  --white: #19262c;
+  --text: #edf7f7;
+  --muted: #b0c2c5;
+  --border: #34464c;
+  --shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+
+  color-scheme: dark;
+  background: var(--white);
+  color: var(--text);
+}
+
+/* Encabezado */
+.dark-mode .header {
+  background: rgba(25, 38, 44, 0.96);
+}
+
+/* Portada */
+.dark-mode .hero {
+  background:
+    radial-gradient(ellipse at 90% 10%, #203d40, transparent 45%),
+    var(--background);
+}
+
+/* Elementos decorativos */
+.dark-mode .hero-circle {
+  background: linear-gradient(140deg, #244b4e, #1a3035);
+  border-color: var(--border);
+}
+
+.dark-mode .tooth-art {
+  background: #263b41;
+  color: #75d9dc;
+}
+
+.dark-mode .floating-card {
+  background: #223239;
+}
+
+/* Formularios */
+.dark-mode .appointment {
+  background: #142329;
+}
+
+.dark-mode .appointment-form input,
+.dark-mode .appointment-form select,
+.dark-mode .appointment-form textarea {
+  background: #223239;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.dark-mode .appointment-form input::placeholder,
+.dark-mode .appointment-form textarea::placeholder {
+  color: #a5b8bc;
+}
+
+/* Botones */
+.dark-mode .button-secondary {
+  background: #223239;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.dark-mode .button-secondary:hover {
+  background: #2b454c;
+}
+
+/* Menú desplegable */
+.dark-mode .dropdown-menu {
+  background: #19262c;
+  border-color: var(--border);
+}
+
+/* Reseñas y tarjetas */
+.dark-mode .service-card,
+.dark-mode .reviews-panel,
+.dark-mode .contact-card {
+  background: var(--white);
+  border-color: var(--border);
+}
+
+.dark-mode .service-highlight {
+  background: #203d40;
+}
+
+.dark-mode .appointment-detail > span {
+  background: #223239;
+}
+
+/* Botón para cambiar de tema */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  background: var(--mint);
+}
+
+#themeIcon {
+  font-size: 1.2rem;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 700px) {
+  .theme-toggle {
+    padding: 8px 10px;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #41b7c2;
+  outline-offset: 3px;
+}
+
+.section {
+  padding: 90px 8%;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -1px;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* =================================
+   2. ENCABEZADO Y MENÚ
+================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 82px;
+  padding: 14px 6%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.logo strong {
+  color: var(--primary);
+}
+
+.logo-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  color: var(--white);
+  background: var(--primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 0.91rem;
+}
+
+.nav > a:not(.nav-button) {
+  transition: color 0.2s;
+}
+
+.nav > a:hover,
+.dropdown a:hover {
+  color: var(--primary);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown summary {
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.dropdown summary span {
+  color: var(--primary);
+  margin-left: 4px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: -20px;
+  min-width: 235px;
+  padding: 10px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+  background: var(--mint);
+}
+
+.dropdown:not([open]) .dropdown-menu {
+  display: none;
+}
+
+.nav-button,
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.nav-button,
+.button-primary {
+  color: var(--white);
+  background: var(--primary);
+}
+
+.nav-button:hover,
+.button-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* =================================
+   3. PORTADA
+================================= */
+
+.hero {
+  min-height: 570px;
+  padding: 70px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 45px;
+  background:
+    radial-gradient(ellipse at 90% 10%, #e5f7f3, transparent 45%),
+    var(--background);
+  overflow: hidden;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: -3px;
+  line-height: 1.08;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+  color: var(--primary);
+}
+
+.hero-content > p {
+  max-width: 490px;
+  font-size: 1.08rem;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button-secondary {
+  background: var(--white);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.button-secondary:hover {
+  background: var(--mint);
+}
+
+.hero-note {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  background: #36a879;
+  border-radius: 50%;
+}
+
+.hero-visual {
+  min-height: 370px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.hero-circle {
+  width: min(340px, 80%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #bdebe3, #e9faf6);
+  border: 1px solid #c8e9e3;
+}
+
+.tooth-art {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 175px;
+  height: 175px;
+  border-radius: 45% 45% 40% 40%;
+  color: var(--primary);
+  background: white;
+  box-shadow: 0 25px 55px rgba(8, 126, 139, 0.13);
+  font-size: 6rem;
+  transform: rotate(-8deg);
+}
+
+.floating-card {
+  position: absolute;
+  right: 0;
+  bottom: 45px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.floating-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--mint);
+  color: var(--primary);
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.floating-card strong,
+.floating-card small {
+  display: block;
+}
+
+.floating-card small {
+  color: var(--muted);
+}
+
+.hero-decoration {
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--primary);
+}
+
+/* =================================
+   4. FRANJA INFORMATIVA
+================================= */
+
+.trust-strip {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 30px 8%;
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-strip div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trust-strip strong {
+  font-size: 1.35rem;
+}
+
+.trust-strip span {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* =================================
+   5. NOSOTROS Y TÍTULOS
+================================= */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-content p {
+  font-size: 1.08rem;
+  margin-bottom: 20px;
+}
+
+.text-link {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.centered {
+  text-align: center;
+}
+
+.section-heading {
+  margin-bottom: 40px;
+}
+
+.section-heading p {
+  margin-top: 15px;
+}
+
+/* =================================
+   6. TARJETAS DE SERVICIOS
+================================= */
+
+.services {
+  background: var(--background);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.service-card {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: var(--mint);
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 23px;
+}
+
+.service-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.22rem;
+}
+
+.service-card p {
+  margin-bottom: 12px;
+  font-size: 0.94rem;
+}
+
+.service-card p strong {
+  color: var(--text);
+}
+
+.service-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.service-highlight {
+  background: var(--mint);
+}
+
+.disclaimer {
+  margin-top: 24px;
+  font-size: 0.83rem;
+  text-align: center;
+}
+
+/* =================================
+   7. FORMULARIO DE CITAS
+================================= */
+
+.appointment {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  align-items: start;
+  padding: 90px 8%;
+  background: #edf8f6;
+}
+
+.appointment-info h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin-bottom: 22px;
+}
+
+.appointment-info > p {
+  margin-bottom: 30px;
+}
+
+.appointment-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.appointment-detail > span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: white;
+  color: var(--primary);
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.appointment-detail small {
+  display: block;
+  color: var(--muted);
+}
+
+.appointment-detail a {
+  font-weight: bold;
+}
+
+.appointment-detail p {
+  margin-bottom: 5px;
+}
+
+.appointment-form {
+  padding: 32px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.appointment-form h3 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.form-description,
+.form-note {
+  font-size: 0.82rem;
+  margin-bottom: 20px;
+}
+
+.appointment-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 17px 0 7px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  color: var(--text);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.appointment-form textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.submit-button {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  margin: 22px 0 12px;
+}
+
+.form-note {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form-message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* =================================
+   8. RESEÑAS Y CONTACTO
+================================= */
+
+.reviews {
+  background: var(--white);
+}
+
+.reviews-panel {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.google-mark {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: #4285f4;
+  margin-bottom: 15px;
+}
+
+.reviews-panel p {
+  margin-bottom: 25px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  padding: 26px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.contact-card h3 {
+  margin-bottom: 14px;
+}
+
+.contact-card p {
+  margin-bottom: 10px;
+}
+
+.contact-card .text-link {
+  display: block;
+}
+
+/* =================================
+   9. PIE DE PÁGINA
+================================= */
+
+.footer {
+  padding: 35px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.footer > p {
+  font-size: 0.85rem;
+}
+
+.footer-legal {
+  width: 100%;
+  text-align: center;
+}
+
+/* =================================
+   10. ADAPTACIÓN A CELULARES
+================================= */
+
+@media (max-width: 1050px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .appointment {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 60px 6%;
+  }
+
+  .header {
+    padding: 15px 6%;
+  }
+
+  .nav {
+    width: 100%;
+    gap: 12px 16px;
+    font-size: 0.85rem;
+  }
+
+  .dropdown-menu {
+    left: 0;
+    max-width: 85vw;
+  }
+
+  .hero {
+    padding: 55px 6%;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+  }
+
+  .hero-visual {
+    min-height: 300px;
+  }
+
+  .floating-card {
+    right: 0;
+    bottom: 20px;
+  }
+
+  .about,
+  .appointment {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-strip {
+    padding: 25px 5%;
+  }
+
+  .trust-strip div {
+    flex: 1 1 35%;
+  }
+
+  .appointment-form {
+    padding: 23px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .reviews-panel {
+    padding: 28px 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-legal {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =====================================
+   CORRECCIÓN DEL FORMULARIO EN MODO OSCURO
+===================================== */
+
+/* Fondo de la tarjeta y textos */
+.dark-mode .appointment-form {
+  background: #19262c;
+  color: #edf7f7;
+  border-color: #34464c;
+}
+
+/* Título y etiquetas */
+.dark-mode .appointment-form h3,
+.dark-mode .appointment-form label {
+  color: #edf7f7;
+}
+
+/* Descripciones y mensajes */
+.dark-mode .appointment-form p {
+  color: #b0c2c5;
+}
+
+/* Campos de texto, listas y comentarios */
+.dark-mode .appointment-form input,
+.dark-mode .appointment-form select,
+.dark-mode .appointment-form textarea {
+  background-color: #223239;
+  color: #edf7f7;
+  border: 1px solid #455b62;
+}
+
+/* Texto de ejemplo dentro de los campos */
+.dark-mode .appointment-form input::placeholder,
+.dark-mode .appointment-form textarea::placeholder {
+  color: #b0c2c5;
+  opacity: 1;
+}
+
+/* Opciones del selector de servicios y horarios */
+.dark-mode .appointment-form select option {
+  background-color: #223239;
+  color: #edf7f7;
+}
+
+/* Mensaje de confirmación */
+.dark-mode .appointment-form .form-message {
+  color: #75d9dc;
+}
+
+/* Evitar que el botón pierda contraste */
+.dark-mode .appointment-form .submit-button {
+  background: #55cbd0;
+  color: #102529;
+}
+
+/* Mantener visible el texto secundario */
+.dark-mode .appointment-form .form-note,
+.dark-mode .appointment-form .form-description {
+  color: #b0c2c5;
+}
+
+/* =====================================
+   MENÚ HAMBURGUESA PARA CELULARES
+===================================== */
+
+/* En computadora, ocultamos el botón hamburguesa */
+.mobile-menu-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--text);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Las tres líneas del icono */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 21px;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Convertir las líneas en una X cuando el menú está abierto */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================
+   AJUSTES PARA CELULARES Y TABLETS
+===================================== */
+
+@media (max-width: 1050px) {
+  /* Encabezado en una sola fila */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 72px;
+  }
+
+  /* Mostrar el botón hamburguesa */
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Menú cerrado por defecto */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 4px;
+    padding: 16px 6% 22px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    font-size: 0.95rem;
+  }
+
+  /* Mostrarlo al pulsar el botón */
+  .nav.mobile-open {
+    display: flex;
+  }
+
+  /* Enlaces fáciles de pulsar */
+  .nav > a:not(.nav-button),
+  .nav .dropdown > summary {
+    display: block;
+    padding: 11px 12px;
+    border-radius: 8px;
+  }
+
+  .nav > a:hover,
+  .nav .dropdown > summary:hover {
+    background: var(--background);
+  }
+
+  /* Servicios se despliega dentro del menú */
+  .nav .dropdown {
+    width: 100%;
+  }
+
+  .nav .dropdown-menu {
+    position: static;
+    min-width: 0;
+    max-width: none;
+    margin: 4px 0 8px;
+    padding: 6px 10px;
+    border: 0;
+    border-left: 2px solid var(--primary);
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--background);
+  }
+
+  .nav .dropdown-menu a {
+    padding: 10px 12px;
+  }
+
+  /* Botón de tema y botón de citas a todo lo ancho */
+  .nav .theme-toggle,
+  .nav .nav-button {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 6px;
+  }
+
+  .nav .theme-toggle {
+    justify-content: center;
+  }
+
+  /* Colores del menú en modo oscuro */
+  .dark-mode .nav {
+    background: var(--white);
+    border-color: var(--border);
+  }
+
+  .dark-mode .nav .dropdown-menu {
+    background: var(--background);
+  }
+}
